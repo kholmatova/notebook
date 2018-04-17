@@ -2,13 +2,13 @@
 require 'Controllers/QueryBuilder.php';
 
 $db = new QueryBuilder;
-$tasks = $db->getAllTasks();
+$tasks = $db->all('tasks');
 
 ?>
 <!doctype html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -16,7 +16,7 @@ $tasks = $db->getAllTasks();
         <div class="col-md-12">
             <h1>All Tasks</h1>
             <a href="create.php" class="btn btn-success">Add Task</a>
-            <table class="table">
+            <table class="table table-hover">
                 <thead>
                 <tr>
                     <th>ID</th>
