@@ -1,11 +1,15 @@
 <?php
-$pdo = new PDO('mysql:host=localhost; dbname=test', "root", "");
-$statement = $pdo->prepare("SELECT * FROM tasks WHERE id=:id");
-$statement->bindParam(":id", $_GET['id']);
-$statement->execute();
-$task = $statement->fetch(PDO::FETCH_ASSOC);
+function getTask($id){
+    $pdo = new PDO('mysql:host=localhost; dbname=test', 'root', '');
+    $statement = $pdo->prepare('SELECT * FROM tasks WHERE id=:id');
+    $statement->bindParam(':id', $id);
+    $statement->execute();
+    $task = $statement->fetch(PDO::FETCH_ASSOC);
+    return $task;
+}
 
-
+$id = $_GET['id'];
+$task = getTask($id);
 ?>
 
 <!doctype html>

@@ -1,5 +1,5 @@
 <?php
-require 'database/QueryBuilder.php';
+require 'Controllers/QueryBuilder.php';
 
 $db = new QueryBuilder;
 $tasks = $db->getAllTasks();
@@ -31,8 +31,8 @@ $tasks = $db->getAllTasks();
                         <td><?= $task['id'];?></td>
                         <td><?= $task['title'];?></td>
                         <td>
-                            <a href="show.php?id=<?= $task['id'];?>" class="btn btn-info">
-                                Show
+                            <a href="view.php?id=<?= $task['id'];?>" class="btn btn-info">
+                                View
                             </a>
                             <a href="edit.php?id=<?= $task['id'];?>" class="btn btn-warning">
                                 Edit

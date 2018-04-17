@@ -1,9 +1,9 @@
 <?php
-require 'database/QueryBuilder.php';
+require 'Controllers/QueryBuilder.php';
 
 $db = new QueryBuilder;
 $id = $_GET['id'];
-$tasks = $db->getTask($id);
+$task = $db->getTask($id);
 
 ?>
 <!doctype html>
